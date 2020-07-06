@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "ES2017",
+      "DOM"
+    ],
+    "outDir": "../out-tsc/spec",
+    "module": "ESNext",
+    "target": "ES2015",
+    "baseUrl": "",
+    "types": [
+      "jasmine",
+      "Node"
+    ]
+  },
+  "files": [
+    "test.ts",
+    "polyfills.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}

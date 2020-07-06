@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "Node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2015",
+    "lib": [
+      "ES2017",
+      "DOM"
+    ],
+    "outDir": "../out-tsc/app",
+    "module": "ESNext",
+    "baseUrl": "",
+    "types": []
+  },
+  "files": [
+    "main.ts",
+    "polyfills.ts"
+  ],
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts",
+    "**/*.stories.ts"
+  ]
+}

@@ -1,0 +1,13 @@
+version: 0.0
+phases:
+  install:
+    runtime-version:
+      nodejs: 10
+    commands:
+      - npm install
+artifacts:
+  type: zip
+  files:
+    - package.json
+    - package-lock.json
+    - 'dist/**/*'

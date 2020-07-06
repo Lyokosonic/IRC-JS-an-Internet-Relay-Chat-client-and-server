@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "f5b2e6ea-a412-4ba6-ba7c-2a4507db1b27",
+		"name": "TchatBox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/contacts",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Contact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/contact/{{contact_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"contact",
+						"{{contact_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4cab57a-222d-42ba-9e6e-276d8354cecf",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"contact_id\", jsonData._id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Liam",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "FABIANO",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "liam.fabiano@epitech.eu",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "06666666",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "VaultTec",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/createContact",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"createContact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4cab57a-222d-42ba-9e6e-276d8354cecf",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "firstName",
+							"value": "Kevin",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "FABIANO",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "liam.fabiano@epitech.eu",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "phone",
+							"value": "06666666",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "company",
+							"value": "VaultTec",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/contact/{{contact_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"contact",
+						"{{contact_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4cab57a-222d-42ba-9e6e-276d8354cecf",
+						"exec": [
+							"if (responseCode.code === 200) {",
+							"    pm.environment.set(\"contact_id\", null);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/deleteContact/{{contact_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"deleteContact",
+						"{{contact_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
