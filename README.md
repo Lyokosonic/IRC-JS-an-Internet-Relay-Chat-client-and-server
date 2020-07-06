@@ -7,7 +7,7 @@ Build a Web application with Angular, and communicate the data using the NodeJS 
 * Install [NodeJS LTS](https://nodejs.org/) version.
 * Install Python version 2.7 (Not the version 3.7 !)
 * Install MongoDB 4.2
-* Clone the Github repository:
+* Clone the Github repository
 
 ```
 cd TchatBox
